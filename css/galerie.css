@@ -1,0 +1,327 @@
+/********************** Galerie pro Location *************************/
+
+:root {
+    --main-light: rgb(255, 255, 255);
+    --main-dark: rgb(51, 51, 51);
+    --dark-gray: rgb(95, 95, 95);
+    --light-gray: rgb(166, 168, 171);
+    --accent-color_2: rgb(44, 89, 97);
+    --accent-color: rgb(106, 144, 169);
+}
+
+.header-title {
+    position: absolute;
+    z-index: 1000;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+}
+
+.header-title h2 {
+    font-weight: 300;
+}
+
+.header-image-bali {
+    background-image: url(images/header_bali.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.header-image-berlin {
+    background-image: url(images/header_berlin.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.header-image-bretagne {
+    background-image: url(images/header_bretagne.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.header-image-portugal {
+    background-image: url(images/header_portugal.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    max-width: 100%;
+}
+
+.galerie-location {
+    margin: 90px 15% 90px 15%;
+}
+
+.galerie-title {
+    margin-bottom: 32px;
+}
+
+.photo-gallery {
+    display: flex;
+    gap: 10px;
+}
+
+/* Portugal Galerie */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Frankreich Galerie*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+/* Berlin Galerie */
+.grid-area {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    grid-template-areas: 
+        "one two two three"
+        "one two two three";        
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+/* damit das Foto beim hovern zwar gezoomt wird, aber trotzdem in der box bleibt*/
+.photo {
+    overflow: hidden;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transform: scale(1);
+    transition: all 0.7s linear;
+}
+
+.photo img:hover {
+    opacity: .8;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* popup Image*/
+
+/* this class is added so that the scrolling of the html page isn't working when pop is open */
+.body-no-scroll {
+    overflow: hidden;
+}
+
+.image-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 100%;
+    height: 100%;
+    background: var(--main-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    /* das popup tritt in den Vordergrund*/
+    overflow: hidden;
+    transition: 1s;
+    opacity: 0;
+}
+
+.image-popup.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.image-popup.active .close-btn,
+.image-popup.active .image-name,
+.image-popup.active .index,
+.image-popup.active .large-image,
+.image-popup.active .arrow-btn {
+    opacity: 1;
+    transition: opacity .5s;
+    transition-delay: 0.5s;
+}
+
+.close-btn {
+    opacity: 0;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.fa-xmark {
+    top: 28px;
+    right: 16px;
+    color: var(--main-dark);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    position: fixed;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 50px;
+}
+
+.arrow-btn {
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    padding: 10px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background: none;
+}
+
+.fa-angle-left {
+    top: 50%;
+    left: 5%;
+    color: var(--main-dark);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    position: fixed;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 8px;
+    line-height: 50px;
+}
+
+.fa-angle-right {
+    top: 50%;
+    right: 5%;
+    color: var(--main-dark);
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    position: fixed;
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 8px;
+    line-height: 50px;
+}
+
+.left-arrow {
+    left: 5%;
+}
+
+.right-arrow {
+    right: 5%;
+}
+
+.fa-solid:hover {
+    color: var(--accent-color);
+}
+
+.large-image {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    opacity: 0;
+}
+
+@media (min-width: 2000px) {
+    .close-btn,
+    .fa-xmark {
+        right: 20%;
+    }
+
+    .fa-angle-left {
+            left: 20%;
+        }
+    
+        .fa-angle-right {
+            right: 20%;
+        }
+    
+        .left-arrow {
+            left: 20%;
+        }
+    
+        .right-arrow {
+            right: 20%;
+        }
+    }
+
+
+@media (max-width: 850px) {
+    .fa-angle-left {
+        left: 2px;
+        font-size: 1.5rem;
+        margin-top: 0px;
+    }
+
+    .fa-angle-right {
+        right: 2px;
+        font-size: 1.5rem;
+        margin-top: 0px;
+    }
+
+    .left-arrow {
+        left: 2px;
+    }
+
+    .right-arrow {
+        right: 2px;
+    }
+}
+
+/* back to top button */
+.to-top {
+    position: fixed;
+    bottom: 35px;
+    right: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border: none;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--main-light);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fa-angle-up {
+    font-size: 1.25rem;
+    text-align: center;
+    color: var(--main-dark);
+}

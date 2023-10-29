@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalja Rau Photography</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main_navigation.css">
+    <link rel="stylesheet" href="css/galerie.css">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+    
+<body>
+    <header id="galerie_portugal">
+        <nav>
+            <input type="checkbox" id="toggle_button">
+            <label for="toggle_button" class="toggle_button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </label>
+            <ul>
+                <li id="navi01"><a href="index.html">Home</a></li>
+                <li id="navi02"><a href="galerie.html">Galerie</a></li>
+                <li id="navi03"><a href="aboutme.html">Über mich</a></li>
+                <li id="navi04"><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+    <!-- image popup + slider: https://www.youtube.com/watch?v=kgLD27jrWRo&ab_channel=ModernWeb -->
+    <!-- popup -->
+        <div class="image-popup">
+            <!-- close button -->
+            <button class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <!-- arrows -->
+            <button class="arrow-btn left-arrow"><i class="fa-solid fa-angle-left"></i></button>
+            <button class="arrow-btn right-arrow"><i class="fa-solid fa-angle-right"></i></button>
+            <!-- image -->
+            <img src="images/galerie_popup_portugal/img1.jpg" class="large-image" alt="">
+        </div>
+
+        <section>
+            <div class="header-title">
+                <h1>Portugal</h1>
+            </div>
+            <div class="header-image-portugal"></div>
+        </section>
+
+        <section class="galerie-location">
+            <div class="photo-gallery">
+            
+                <div class="column">
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_6.jpg" alt="Felsformation bildet ein Herz" class="image"></a>
+                    </div>
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_4.jpg" alt="Sonnenaufgang an der Algarve" class="image"></a>
+                    </div>
+                </div>
+            
+                <div class="column">
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_3.jpg" alt="Langzeitbelichtung einer Felsformation in Portugal"
+                            class="image"></a>
+                    </div>
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_10.jpg" alt="Ein Surfer springt mit dem Surfbrett"
+                            class="image"></a>
+                    </div>
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_9.jpg" alt="Surfer läuft ins Wasser" class="image"></a>
+                    </div>
+                </div>
+            
+                <div class="column">
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_5.jpg" alt="Frau steht in einer Höhle und nach oben" class="image"></a>
+                    </div>
+                    <div class="photo">
+                        <img src="images/thumbnails/portugal_1.jpg" alt="Kayak in einer Höhle gestrandet" class="image"></a>
+                    </div>
+                </div>
+            </div> <!-- photo-gallery end -->
+        </section>
+
+        <button class="to-top">
+            <i class="fa-solid fa-angle-up"></i>
+        </button>
+
+    </main>
+
+    <footer>
+        <p>© 2023 Natalja Rau</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/popup_portugal.js"></script>
+
+</body>
+</html>

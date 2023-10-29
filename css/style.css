@@ -1,0 +1,315 @@
+/* Google fonts & font family
+==================================================*/
+
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Raleway', sans-serif;
+*/
+
+:root {
+    --main-light: rgb(255, 255, 255);
+    --main-dark: rgb(51, 51, 51);
+    --dark-gray: rgb(95, 95, 95);
+    --light-gray: rgb(166, 168, 171);
+    --accent-color_2: rgb(44, 89, 97);
+    --accent-color: rgb(106, 144, 169);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    /* Dies hilft, dass der Footer immer ganz unten von der Seite angezeigt wird, auch wenn die Seite leer ist */
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    background-color: var(--main-light);
+    color: var(--dark-gray);
+    height: 100%;
+    /* Dies hilft, dass der Footer immer ganz unten von der Seite angezeigt wird, auch wenn die Seite leer ist */
+}
+
+.main-wrapper {
+    /* die Nachfolgenden Punkte dienen dem sticky footer*/
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* header - main - footer */
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 52px;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+    color: var(--main-dark);
+}
+
+h2 {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 400;
+    font-family: 'Lato', sans-serif;
+    color: var(--main-dark);
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+    color: var(--main-dark);
+}
+
+p {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family:'Raleway', sans-serif;
+    color: var(--main-dark);
+}
+
+.header-image-container {
+    background-image: url(images/header_1.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    max-width: 100%;
+    background-color: rgb(106, 144, 169, 0.1);
+}
+
+/*********** ABOUTME SECTION *************/
+.aboutme-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 124px 15% 90px 15%;
+}
+
+.aboutme-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    width: 100%;
+}
+
+.aboutme-content p {
+    padding-top: 32px;
+}
+
+.aboutme-image {
+    width: 100%;
+    margin: 24px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    filter: grayscale(100%);
+}
+/*********** WORLDMAP SECTION *************/
+.worldmap-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    max-height: 100vh;
+    margin: 92px 15% 90px 15%;
+}
+
+.worldmap-section h2 {
+    margin-bottom: 32px;
+}
+
+circle {
+    fill: var(--accent-color);
+}
+circle:hover {
+    fill: var(--accent-color);
+    opacity: 0.8;
+}
+/*********** GALERIE SECTION *************/
+
+.galerie-section {
+    margin: 32px 15% 64px 15%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    column-gap: 24px;
+    row-gap: 48px;
+    grid-template-areas: 
+        "card-1 card-1 card-1"
+        "card-2 card-2 card-3"
+        "card-4 card-4 card-4";
+}
+
+.card-container {
+    position: relative;
+    border: 1px solid var(--light-gray);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-1 {
+    grid-area: card-1;
+}
+.card-2 {
+    grid-area: card-2;
+}
+.card-3 {
+    grid-area: card-3;
+}
+.card-4 {
+    grid-area: card-4;
+}
+
+.card-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+
+    transform: scale(1);
+    transition: all 0.7s linear;
+}
+
+.card-container {
+    cursor: pointer;
+}
+
+.card-container img:hover {
+    cursor: pointer;
+    filter: none;
+    transform: scale(1.1);
+}
+
+.img-title {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background-color: var(--main-light);
+    opacity: 0.7;
+    width: 100%;
+    padding: 12px;
+    color: var(--accent-color);
+    font-weight: 500;
+} 
+
+/*********** CONTACT SECTION *************/
+.contact-container {
+    padding: 124px 15% 90px 15%;
+}
+
+.header-contacts {
+    padding-bottom: 32px;
+    text-align: center;
+}
+
+#container-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+input,
+textarea {
+    font-family: 'Raleway',
+        sans-serif;
+    font-size: 16px;
+    line-height: 2em;
+    display: block;
+    width: 100%;
+    padding: 8px 8px;
+    margin-top: 8px;
+    border: 1px solid rgb(106, 144, 169, 0.7);
+}
+
+textarea {
+    resize: vertical;
+    height: 160px;
+}
+
+input:focus, 
+textarea:focus {
+    border-color: #85b7d9;
+    outline: 0;
+    box-shadow: 0 0 0 0 rgba(34, 36, 38, .35) inset;
+}
+
+/* the backgroundcolor when aoutcompleting the fields stays the same */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover {
+    border: 1px solid #ccc;
+    -webkit-box-shadow: 0 0 0px 1000px var(--main-light) inset;
+}
+
+.btn {
+    margin-top: 18px;
+    color: var(--main-light);
+    background-color: var(--accent-color);
+    border: none;
+    height: 50px;
+    width: 100%;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.input-control.success input,
+.input-control.success textarea {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.input-control.error input,
+.input-control.error textarea {
+    border-color: rgb(198, 2, 2);
+}
+
+.input-control .error {
+    color: rgb(198, 2, 2);
+    font-size: 14px;
+}
+
+.success-message {
+    display: none;
+    margin-top: 32px;
+}
+
+@media (min-width: 1500px) {
+    .contact-container {
+        padding: 124px 20% 90px 20%;
+    }
+}
+
+@media (max-width: 650px) {
+    .contact-container {
+        padding: 124px 5% 90px 5%;
+    }
+}
+
+footer {
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+footer p {
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+}

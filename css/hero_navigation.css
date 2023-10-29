@@ -1,0 +1,57 @@
+:root {
+    --main-light: rgb(255, 255, 255);
+    --main-dark: rgb(51, 51, 51);
+    --dark-gray: rgb(95, 95, 95);
+    --light-gray: rgb(243, 243, 243);
+    --accent-color_2: rgb(44, 89, 97);
+    --accent-color: rgb(106, 144, 169);
+}
+
+/* navigation bar for the main page */
+nav {
+    position: absolute;
+    z-index: 1000;
+    top: 40%;
+    width: 100%;
+    height: 60px;
+    /* bis hier nav wird fixed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* nav ist ohne ul { display:flex} lediglich rechts angeordnet, aber noch untereinander */
+    align-items: center;
+    transition: background-color 0.3s ease-in;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 1.2em 0 1.2em 0;
+}
+
+nav li a {
+    text-decoration: none;
+    padding: 0 2em;
+    color: var(--main-dark);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav li a:hover {
+    color: var(--accent-color);
+}
+
+
+@media(max-width: 650px) {
+
+    nav ul a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+ 
+}

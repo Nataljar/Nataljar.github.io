@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalja Rau Photography</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main_navigation.css">
+   <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Raleway:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+</head>
+<body>
+    <div class="main-wrapper">
+        <header id="kontakt">
+            <nav>
+                <input type="checkbox" id="toggle_button">
+                <label for="toggle_button" class="toggle_button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </label>
+                <ul>
+                    <li id="navi01"><a href="index.html">Home</a></li>
+                    <li id="navi02"><a href="galerie.html">Galerie</a></li>
+                    <li id="navi03"><a href="aboutme.html">Über mich</a></li>
+                    <li id="navi04"><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main>
+            <div class="contact-container">
+        
+                <h2 class="header-contacts">Schreib mir eine Nachricht</h2>
+        
+                <form id="form" action="" novalidate>
+                    <!-- Hier muss noch der Ort eingefügt werden, an den die Nachricht geschickt werden soll -->
+                    <div id="container-form">
+                        <div class="input-control">
+                            <label for="name"></label>
+                            <input id="name" name="name" class="form-control" placeholder="Name" required>
+                            <div class="error"></div>
+                            <!--dieser Container enthält eine Fehlermeldung bei fehlerhaften Eingaben-->
+                        </div>
+        
+                        <div class="input-control">
+                            <label for="email"></label>
+                            <input id="email" name="email" class="form-control" placeholder="E-Mail Adresse" required>
+                            <div class="error"></div>
+                        </div>
+        
+                        <div class="input-control">
+                            <label for="message"></label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Nachricht"
+                                required></textarea>
+                            <div class="error"></div>
+                        </div>
+                        <div class="button_form">
+                            <button id="submit" class="btn" type="submit">Abschicken</button>
+                        </div>
+        
+                        <div class="success-message">
+                            <h2>Vielen Dank für deine Nachricht. <br> Ich melde mich bald bei dir.</h2>
+                        </div>
+        
+                    </div>
+                </form>
+            </div> <!-- contact-container end -->
+        
+        </main>
+        
+        <footer>
+            <p>© 2023 Natalja Rau</p>
+        </footer>
+    </div> <!-- main-wrapper end -->
+
+    <script src="js/main.js"></script>
+</body>
+</html>

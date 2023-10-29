@@ -1,0 +1,109 @@
+
+:root {
+    --main-light: rgb(255, 255, 255);
+    --main-dark: rgb(51, 51, 51);
+    --dark-gray: rgb(95, 95, 95);
+    --light-gray: rgb(243, 243, 243);
+    --accent-color_2: rgb(44, 89, 97);
+    --accent-color: #6A90A9;
+}
+
+/* navigation bar simple */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    /* bis hier nav wird fixed */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* nav ist ohne ul { display:flex} lediglich rechts angeordnet, aber noch untereinander */
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 1.2em 0 1.2em 0;
+}
+
+nav li a {
+    text-decoration: none;
+    padding: 0 2em;
+    color: var(--main-dark);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav li a:hover,
+#galerie #navi02 a,
+#galerie_portugal #navi02 a,
+#galerie_frankreich #navi02 a,
+#galerie_berlin #navi02 a,
+#galerie_bali #navi02 a,
+#aboutme #navi03 a,
+#kontakt #navi04 a {
+    color: var(--accent-color);
+}
+
+nav input[type="checkbox"] {
+    display: none;
+}
+
+.toggle_button {
+    width: 30px;
+    height: 23px;
+
+    position: absolute;
+    top: 18px;
+    right: 5%;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    background-color: var(--main-dark);
+    border-radius: 100px;
+}
+
+@media(max-width: 650px) {
+    .toggle_button {
+        display: flex;
+    }
+
+    nav ul {
+        height: min-content;
+        width: 100%;
+        background-color: var(--main-light);
+
+        display: none;
+        /* wäre dies auf block, so wäre das menü sichtbar.*/
+        position: absolute;
+        top: 40px;
+    }
+
+    nav li {
+        height: min-content;
+        padding: 12px 0;
+        width: 100%;
+    }
+
+    nav ul a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #toggle_button:checked~ul {
+        /* wenn ich auf die 3 balken klicke, so öffnet sich das Menü*/
+        display: block;
+    }
+}
