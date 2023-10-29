@@ -113,6 +113,8 @@ p {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     filter: grayscale(100%);
 }
+
+
 /*********** WORLDMAP SECTION *************/
 .worldmap-section {
     display: flex;
