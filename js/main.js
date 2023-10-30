@@ -12,6 +12,7 @@ function changeBg() {
   const header = document.querySelector(".header-image-container");
   const bg = bgImages[Math.floor(Math.random()* bgImages.length)];
   header.style.backgroundImage = bg;
+  
 }
 
 setInterval(changeBg, 5000);

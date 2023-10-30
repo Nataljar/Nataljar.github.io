@@ -11,7 +11,7 @@
 
 .header-title {
     position: absolute;
-    z-index: 1000;
+    z-index: 999;
     top: 60px;
     width: 100%;
     text-align: center;
@@ -22,7 +22,7 @@
 }
 
 .header-image-bali {
-    background-image: url(images/header_bali.jpg);
+    background-image: url(images/header_1.jpg);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -74,21 +74,6 @@
     gap: 10px;
 }
 
-
-/* Portugal Galerie */
-.column {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Frankreich Galerie*/
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 10px;
-}
-
 /* Berlin Galerie */
 .grid-area {
     display: grid;
@@ -129,6 +114,40 @@
     opacity: .8;
     cursor: pointer;
     transform: scale(1.1);
+}
+
+/* Bali + Frankreich Galerie*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+/* Portugal Galerie */
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media (max-width: 650px) {
+    .header-title {
+        top: 70px;
+    }
+
+    .galerie-location {
+        margin: 70px 5% 32px 5%;
+    }
+
+    .photo-gallery {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }  
 }
 
 /* popup Image*/
