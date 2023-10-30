@@ -121,7 +121,19 @@
     }
 
     .header-image {
-        opacity: 0.7;
+        opacity: 0.6;
+    }
+
+    .header-image.bali {
+        background-image: url("../images/mobile_header_bali.JPG");
+    }
+
+    .header-image.berlin {
+        background-image: url("../images/mobile_header_berlin.JPG");
+    }
+
+    .header-image.header-image.bretagne {
+        background-image: url("../images/mobile_header_bretagne.jpg");
     }
 
     .galerie-location {

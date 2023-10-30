@@ -5,11 +5,12 @@
 function changeBg() {
     const bgImages = [
     'url("images/header_1.jpg")',
-    'url("images/header_2.jpg")',
+    /* 'url("images/header_2.jpg")', */
     'url("images/header_3.jpg")',
-  ]
+  ] 
 
   const header = document.querySelector(".header-image-container");
+
   const bg = bgImages[Math.floor(Math.random()* bgImages.length)];
   header.style.backgroundImage = bg; 
 
