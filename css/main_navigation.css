@@ -20,6 +20,7 @@ nav {
     justify-content: center;
     /* nav ist ohne ul { display:flex} lediglich rechts angeordnet, aber noch untereinander */
     align-items: center;
+    z-index: 1000;
 }
 
 nav ul {

@@ -3,7 +3,7 @@
 
 // Background Images changes every 5 seconds
 function changeBg() {
-  const bgImages = [
+    const bgImages = [
     'url("images/header_1.jpg")',
     'url("images/header_2.jpg")',
     'url("images/header_3.jpg")',
@@ -11,8 +11,15 @@ function changeBg() {
 
   const header = document.querySelector(".header-image-container");
   const bg = bgImages[Math.floor(Math.random()* bgImages.length)];
-  header.style.backgroundImage = bg;
-  
+  header.style.backgroundImage = bg; 
+
+   // Check the screen width and add the appropriate CSS class
+  if (window.innerWidth <= 650) {
+    header.classList.add("mobile");
+  } else {
+    header.classList.remove("mobile");
+  }
+
 }
 
 setInterval(changeBg, 5000);
