@@ -43,21 +43,24 @@
     </header>
     
     <main>
-    <!-- image popup + slider: https://www.youtube.com/watch?v=kgLD27jrWRo&ab_channel=ModernWeb -->
     <!-- popup -->
         <div class="image-popup">
             <!-- close button -->
-            <button class="close-btn">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <!-- arrows -->
-            <button class="arrow-btn left-arrow"><i class="fa-solid fa-angle-left"></i></button>
-            <button class="arrow-btn right-arrow"><i class="fa-solid fa-angle-right"></i></button>
-            <!-- image -->
-            <img src="images/galerie_popup_portugal/img1.jpg" class="large-image" alt="">
+            <div class="button-container">
+                <button class="close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="popup-container">
+                <button class="arrow-btn left-arrow"><i class="fa-solid fa-angle-left"></i></button>
+                <img src="images/galerie_popup_portugal/img1.jpg" class="large-image" alt="">
+                <button class="arrow-btn right-arrow"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
         </div>
+    <!-- popup end -->
 
-        <section>
+        <section class="hero-section">
             <div class="header-title">
                 <h1>Portugal - Algarve</h1>
             </div>
@@ -68,9 +71,13 @@
             <div class="photo-gallery">
             
                 <div class="column">
-                    <div class="photo"> <!-- image update needed -->
-                        <img src="images/img/portugal_6.jpg" alt="Felsformation bildet ein Herz" 
-                            class="image">
+                    <div class="photo">
+                        <img src="images/img/1500_portugal_6.jpg" alt="Felsformation bildet ein Herz" 
+                            class="image"
+                            srcset="images/img/500_portugal_6.jpg 500w,
+                                images/img/1500_portugal_6.jpg 1500w,
+                                images/img/2200_portugal_6.jpg 2200w"
+                            sizes="(min-width: 650px) 30vw, 100vw">
                     </div>
                     <div class="photo">
                         <img src="images/img/1500_portugal_4.jpg" alt="Sonnenaufgang an der Algarve" 
@@ -110,9 +117,13 @@
                 </div>
             
                 <div class="column">
-                    <div class="photo"> <!-- image update needed -->
-                        <img src="images/img/portugal_5.jpg" alt="Frau steht in einer Höhle und nach oben" 
-                            class="image">
+                    <div class="photo">
+                        <img src="images/img/1500_portugal_5.jpg" alt="Frau steht in einer Höhle und nach oben" 
+                            class="image"
+                            srcset="images/img/500_portugal_5.jpg 500w,
+                                images/img/1500_portugal_5.jpg 1500w,
+                                images/img/2200_portugal_5.jpg 2200w"
+                            sizes="(min-width: 650px) 30vw, 100vw">
                     </div>
                     <div class="photo">
                         <img src="images/img/1500_portugal_1.jpg" alt="Kayak in einer Höhle gestrandet" 

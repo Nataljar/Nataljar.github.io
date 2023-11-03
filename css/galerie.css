@@ -14,6 +14,7 @@
     z-index: 999;
     top: 40%;
     width: 100%;
+    max-width: 1920px;
     text-align: center;
 }
 
@@ -116,6 +117,13 @@
     gap: 10px;
 }
 
+@media (min-width: 1500px){
+    .galerie-location {
+        max-width: 1300px;
+        margin: 90px auto 90px auto;    
+    }
+    
+}
 @media (max-width: 1300px) {
     .header-image.bali {
             background-image: url("../images/header/1500_header_bali.jpg");
@@ -185,9 +193,10 @@
     height: 100%;
     background: var(--main-dark);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: 1000;
     /* das popup tritt in den Vordergrund*/
     overflow: hidden;
     transition: 1s;
@@ -209,116 +218,58 @@
     transition-delay: 0.5s;
 }
 
+.button-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+}
+
 .close-btn {
-    opacity: 0;
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: none;
-    background: none;
-    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 24px;
 }
 
-.fa-xmark {
-    top: 28px;
-    right: 16px;
-    color: var(--main-light);
-    opacity: 0.6;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    position: fixed;
-    text-align: center;
-    font-size: 1.5rem;
-    line-height: 50px;
-}
-
+.close-btn,
 .arrow-btn {
-    opacity: 0;
-    position: fixed;
-    top: 50%;
-    padding: 10px;
     height: 50px;
     width: 50px;
+    padding: 10px;
+    margin-inline: 24px;
     border-radius: 50%;
     border: none;
     background: none;
 }
-
-.fa-angle-left {
-    top: 50%;
-    left: 5%;
+.fa-xmark,
+.fa-angle-left,
+.fa-angle-right  {
     color: var(--main-light);
-    opacity: 0.6;
-    height: 50px;
-    width: 50px;
+    opacity: 0.6; 
     cursor: pointer;
-    position: fixed;
     text-align: center;
-    font-size: 2rem;
-    margin-top: 8px;
-    line-height: 50px;
-}
-
-.fa-angle-right {
-    top: 50%;
-    right: 5%;
-    color: var(--main-light);
-    opacity: 0.6;
-    height: 50px;
-    width: 50px;
-    cursor: pointer;
-    position: fixed;
-    text-align: center;
-    font-size: 2rem;
-    margin-top: 8px;
-    line-height: 50px;
-}
-
-.left-arrow {
-    left: 5%;
-}
-
-.right-arrow {
-    right: 5%;
-}
-
-.fa-solid:hover {
-    opacity: 1;
+    font-size: 2rem; 
 }
 
 .large-image {
     width: 80%;
     height: 80%;
+    max-width: 1500px;
     object-fit: contain;
     opacity: 0;
 }
 
-@media (min-width: 2000px) {
-    .close-btn,
-    .fa-xmark {
-        right: 20%;
-    }
-
-    .fa-angle-left {
-        left: 20%;
-    }
-    
-    .fa-angle-right {
-        right: 20%;
-    }
-    
-    .left-arrow {
-        left: 20%;
-    }
-    
-    .right-arrow {
-        right: 20%;
-    }
+.fa-solid:hover {
+    opacity: 1;
 }
 
 
@@ -328,24 +279,25 @@
         height: 100%;
     }
 
-    .fa-angle-left {
-        left: 2px;
-        font-size: 1.5rem;
-        margin-top: 0px;
-    }
-
-    .fa-angle-right {
-        right: 2px;
-        font-size: 1.5rem;
-        margin-top: 0px;
+    .arrow-btn {
+        position: fixed;
+        top: 50%;
+        bottom: 50%;
+        margin-inline: 16px;
+        padding: 0;
     }
 
     .left-arrow {
-        left: 2px;
+        left: 8px;
     }
 
     .right-arrow {
-        right: 2px;
+        right: 8px;
+    }
+
+    .fa-angle-left,
+    .fa-angle-right { 
+        font-size: 1.5rem;
     }
 }
 

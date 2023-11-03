@@ -76,9 +76,14 @@ p {
     color: var(--main-dark);
 }
 
+.hero-section {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
 .header-image-container {
     background-image: url("../images/header/2200_header_1.jpg");
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -94,12 +99,12 @@ p {
 }
 
 @media (max-width: 650px) {
-    .hero-section {
+    .hero-section.main {
     background-color: #E7B053;
 
     }
     /* Define different background images for screens with max-width 650px */
-    .header-image-container.mobile {
+    .header-image-container {
         background-image: url("../images/header/1500_mobile_header_1.jpg");
     }
 }
@@ -137,6 +142,13 @@ p {
     width: 100%;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     filter: grayscale(100%);
+}
+
+@media (min-width: 1500px) {
+    .aboutme-section {
+        margin: 124px auto 90px auto;
+        max-width: 1100px;
+    }
 }
 
 @media (max-width: 960px) {
@@ -260,6 +272,13 @@ circle:hover {
     font-size: 24px;
 } 
 
+@media (min-width: 1920px) {
+    .galerie-section {
+        margin: 32px auto 64px auto;
+        max-width: 1100px;
+    }
+}
+
 @media (max-width: 1200px) {
     .img-title {
         font-size: 20px ;
@@ -374,7 +393,9 @@ select:-webkit-autofill:hover {
 
 @media (min-width: 1500px) {
     .contact-container {
-        padding: 124px 20% 90px 20%;
+        padding: 0;
+        margin: 124px auto 90px auto;
+        max-width: 1100px;
     }
 }
 
