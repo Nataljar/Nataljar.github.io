@@ -20,7 +20,7 @@ images.forEach((item, i) => {                           // Eine Schleife wird ve
 })
 
 const updateImage = (i) => {
-  let path = `images/galerie_popup_frankreich/img${i + 1}.jpg`;                     // Der path wird mit dem entsprechenden Bildpfad generiert und dem largeImage-Element zugewiesen.
+  let path = `images/galerie_popup_frankreich/2200_bretagne_${i + 1}.jpg`;                     // Der path wird mit dem entsprechenden Bildpfad generiert und dem largeImage-Element zugewiesen.
   largeImage.src = path;
   index = i;                                            // Der index wird auf den übergebenen Index aktualisiert
 }

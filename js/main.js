@@ -2,28 +2,24 @@
 /*********************  HERO SECTION **************************/ 
 
 // Background Images changes every 5 seconds
-function changeBg() {
+/* function changeBg() {
     const bgImages = [
-    'url("images/header_1.jpg")',
-    /* 'url("images/header_2.jpg")', */
-    'url("images/header_3.jpg")',
+    'url("images/header/2200_header_1.jpg")',
+    'url("images/header/2200_header_3.jpg")',
   ] 
 
   const header = document.querySelector(".header-image-container");
 
+  if (window.innerWidth >= 651) {
   const bg = bgImages[Math.floor(Math.random()* bgImages.length)];
   header.style.backgroundImage = bg; 
-
-   // Check the screen width and add the appropriate CSS class
-  if (window.innerWidth <= 650) {
-    header.classList.add("mobile");
-  } else {
-    header.classList.remove("mobile");
-  }
+} else {
+  header.style.backgroundImage = 'url("images/header/1500_mobile_header_1.jpg")'
+}
 
 }
 
-setInterval(changeBg, 5000);
+setInterval(changeBg, 5000); */
 
 /*********************  GALERIE  **************************/ 
 
