@@ -295,10 +295,36 @@
         right: 8px;
     }
 
+    .fa-xmark,
     .fa-angle-left,
     .fa-angle-right { 
         font-size: 1.5rem;
     }
+}
+
+@media (max-width: 600px) {
+    .close-btn {
+        right: 6px;
+        top: 4px;
+        height: 30px;
+        width: 30px;
+        margin-inline: 0px;
+    }
+
+    .arrow-btn {
+        height: 30px;
+        width: 30px;
+        margin-inline: 0px;
+    }
+
+    .left-arrow {
+        left: 4px;
+    }
+
+    .right-arrow {
+        right: 4px;
+    }
+
 }
 
 /* back to top button */
