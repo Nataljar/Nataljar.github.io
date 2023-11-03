@@ -12,7 +12,7 @@
 .header-title {
     position: absolute;
     z-index: 999;
-    top: 60px;
+    top: 40%;
     width: 100%;
     text-align: center;
 }
@@ -28,22 +28,23 @@
     background-attachment: fixed;
     height: 100vh;
     max-width: 100%;
+    opacity: 0.5;
 }
 
 .header-image.bali {
-    background-image: url("../images/header_bali.jpg");
+    background-image: url("../images/header/2200_header_bali.jpg");
 }
 
 .header-image.berlin {
-    background-image: url("../images/header_berlin.jpg");
+    background-image: url("../images/header/2200_header_berlin.jpg");
 }
 
 .header-image.bretagne {
-    background-image: url("../images/header_bretagne.jpg");
+    background-image: url("../images/header/2200_header_bretagne.jpg");
 }
 
 .header-image.portugal {
-    background-image: url("../images/header_portugal.jpg");
+    background-image: url("../images/header/2200_header_portugal.jpg");
 }
 
 .galerie-location {
@@ -104,7 +105,7 @@
 /* Bali + Frankreich Galerie*/
 .grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
 }
 
@@ -115,27 +116,43 @@
     gap: 10px;
 }
 
-@media (max-width: 650px) {
-    .header-title {
-        top: 40%;
-    }
-
-    .header-image {
-        opacity: 0.6;
-    }
-
+@media (max-width: 1300px) {
     .header-image.bali {
-        background-image: url("../images/mobile_header_bali.JPG");
+            background-image: url("../images/header/1500_header_bali.jpg");
+        }
+    
+        .header-image.berlin {
+            background-image: url("../images/header/1500_header_berlin.jpg");
+        }
+    
+        .header-image.bretagne {
+            background-image: url("../images/header/1500_header_bretagne.jpg");
+        }
+    
+        .header-image.portugal {
+            background-image: url("../images/header/1500_header_portugal.jpg");
+        }
+}
+
+@media (max-width: 650px) {
+    .header-image.bali {
+        background-image: url("../images/header/1500_mobile_header_bali.JPG");
     }
 
     .header-image.berlin {
-        background-image: url("../images/mobile_header_berlin.JPG");
+        background-image: url("../images/header/1500_mobile_header_berlin.JPG");
     }
 
-    .header-image.header-image.bretagne {
-        background-image: url("../images/mobile_header_bretagne.jpg");
+    .header-image.bretagne {
+        background-image: url("../images/header/1500_mobile_header_bretagne.jpg");
     }
 
+    .header-image.portugal {
+        background-image: url("../images/header/1500_header_portugal.jpg");
+    }
+}
+
+@media (max-width: 650px) {
     .galerie-location {
         margin: 20px 12px 32px 12px;
     }
