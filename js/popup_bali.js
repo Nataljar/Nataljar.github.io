@@ -20,6 +20,10 @@ function initializeSwipe(index) {
       currentIndex++;
       updateImage(currentIndex);    // update the displayed image
     }
+
+    // Update arrow visibility
+    leftArrow.style.display = 'block'; // Always show left arrow when clicking the right arrow
+    rightArrow.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
   });
 
   hammertime.on('swiperight', () => {
@@ -27,6 +31,9 @@ function initializeSwipe(index) {
       currentIndex--;
       updateImage(currentIndex);    // update the displayed image
     }
+    // Update arrow visibility
+    rightArrow.style.display = 'block'; // Always show right arrow when clicking the left arrow
+    leftArrow.style.display = currentIndex === 0 ? 'none' : 'block';
   });
 
   currentIndex = index; // setting currentIndex to the provided index, which initializes it to the index of the initially opened image
@@ -39,6 +46,10 @@ images.forEach((item, i) => {
     updateImage(i);
     imagePopup.classList.add('active');
     body.classList.add('body-no-scroll');
+
+    // Update arrow visibility based on the current index - with this the first opened image is set correctly
+    leftArrow.style.display = i === 0 ? 'none' : 'block';
+    rightArrow.style.display = i === images.length - 1 ? 'none' : 'block';
   });
 });
 
@@ -59,7 +70,11 @@ leftArrow.addEventListener('click', () => {
   if (currentIndex > 0) {
     currentIndex--;
     updateImage(currentIndex);
-}
+  }
+  // Update arrow visibility
+  rightArrow.style.display = 'block'; // Always show right arrow when clicking the left arrow
+  leftArrow.style.display = currentIndex === 0 ? 'none' : 'block';
+
 });
 
 rightArrow.addEventListener('click', () => {
@@ -67,6 +82,9 @@ rightArrow.addEventListener('click', () => {
     currentIndex++;
     updateImage(currentIndex);
   }
+  // Update arrow visibility
+  leftArrow.style.display = 'block'; // Always show left arrow when clicking the right arrow
+  rightArrow.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
   });
 
 
