@@ -1,7 +1,6 @@
 // Image popup + slider für Bali
 
-const images = [...document.querySelectorAll('.image')];      // es wird nach class="image" gesucht und in ein Array verpackt
-
+const images = [...document.querySelectorAll('.image')];    // This variable is an array that holds all elements with the class name "image." 
 const imagePopup = document.querySelector('.image-popup');
 const closeBtn = document.querySelector('.close-btn');
 const largeImage = document.querySelector('.large-image');
@@ -9,36 +8,68 @@ const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 const body = document.body;
 
-let index = 0; // will track our current image;
+let originalIndex = 0; // Original index when the popup is opened
+let currentIndex = 0; // Current index as you swipe
+let hammertime;
 
-images.forEach((item, i) => {                           // Eine Schleife wird verwendet, um jedem Element der Variable images einen Klickereignislistener hinzuzufügen.
+function initializeSwipe(index) {
+  hammertime = new Hammer(largeImage);
+  
+  hammertime.on('swipeleft', () => {
+    if (currentIndex < images.length - 1) {   // checking if current index is not the last iamge
+      currentIndex++;
+      updateImage(currentIndex);    // update the displayed image
+    }
+  });
+
+  hammertime.on('swiperight', () => {
+    if (currentIndex > 0) {   // checking if current index is not the first iamge
+      currentIndex--;
+      updateImage(currentIndex);    // update the displayed image
+    }
+  });
+
+  currentIndex = index; // setting currentIndex to the provided index, which initializes it to the index of the initially opened image
+}
+
+images.forEach((item, i) => {
   item.addEventListener('click', () => {
-    updateImage(i);                                     // Funktion wird beim klicken auf ein Bild aufgerufen und der Bildindex an die Funktion übergeben
-    imagePopup.classList.toggle('active');              // durch das Hinzufügen von active wird das popup Fenster sichtbar
-    body.classList.toggle("body-no-scroll"); /* this class is added so that the scrolling of the html page isn't working */
-});
+    originalIndex = i;    // setting originalIndex to the index of the clicked image to remember which image was initially opened.
+    initializeSwipe(i);
+    updateImage(i);
+    imagePopup.classList.add('active');
+    body.classList.add('body-no-scroll');
+  });
 });
 
-const updateImage = (i) => {
-  let path = `images/galerie_popup_bali/2200_bali_${i + 1}.jpg`;                     // Der path wird mit dem entsprechenden Bildpfad generiert und dem largeImage-Element zugewiesen.
+function updateImage(i) {
+  let path = `images/galerie_popup_bali/2200_bali_${i + 1}.jpg`;
   largeImage.src = path;
-  index = i;                                            // Der index wird auf den übergebenen Index aktualisiert
-};
+}
 
-closeBtn.addEventListener('click', () => {              // Ein Klickereignislistener wird zum Schließen-Schaltflächen-Element hinzugefügt. Wenn darauf geklickt wird, wird das Bild-Popup durch das Hinzufügen oder Entfernen der CSS-Klasse 'active' ausgeblendet.
-  imagePopup.classList.toggle('active');
-  body.classList.toggle("body-no-scroll");
-});
-
-leftArrow.addEventListener('click', () => {             //Ein Klickereignislistener wird zum Linkspfeil-Element hinzugefügt. Wenn darauf geklickt wird und der aktuelle Index größer als 0 ist, wird das vorherige Bild durch Aufrufen der updateImage-Funktion mit dem vorherigen Index aktualisiert.
-  if (index > 0) {
-    updateImage(index - 1);
+closeBtn.addEventListener('click', () => {
+  imagePopup.classList.remove('active');
+  body.classList.remove('body-no-scroll');
+  if (hammertime) {       // Check if hammertime is defined (i.e., if swipe gestures are enabled), and if so, we destroy the Hammer.js instance to prevent further gesture handling. This step is crucial to ensure that swipe functionality is reset when closing the popup.
+    hammertime.destroy();
   }
 });
 
+leftArrow.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateImage(currentIndex);
+     if (currentIndex === 0) {
+     leftArrow.style.display = 'none'; // Hide the left arrow when on the first image
+  }
+}
+});
+
 rightArrow.addEventListener('click', () => {
-  if (index < images.length - 1) {
-    updateImage(index + 1);
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    updateImage(currentIndex);
+    leftArrow.style.display = 'block'; // Show the left arrow when not on the first image
   }
 });
 
