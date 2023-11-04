@@ -59,8 +59,6 @@ leftArrow.addEventListener('click', () => {
   if (currentIndex > 0) {
     currentIndex--;
     updateImage(currentIndex);
-     if (currentIndex === 0) {
-  }
 }
 });
 
