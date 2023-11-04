@@ -60,7 +60,6 @@ leftArrow.addEventListener('click', () => {
     currentIndex--;
     updateImage(currentIndex);
      if (currentIndex === 0) {
-     leftArrow.style.display = 'none'; // Hide the left arrow when on the first image
   }
 }
 });
@@ -69,8 +68,7 @@ rightArrow.addEventListener('click', () => {
   if (currentIndex < images.length - 1) {
     currentIndex++;
     updateImage(currentIndex);
-    leftArrow.style.display = 'block'; // Show the left arrow when not on the first image
   }
-});
+  });
 
 
