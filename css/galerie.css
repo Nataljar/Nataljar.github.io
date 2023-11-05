@@ -144,15 +144,15 @@
 
 @media (max-width: 650px) {
     .header-image.bali {
-        background-image: url("../images/header/1500_mobile_header_bali.JPG");
+        background-image: url("../images/header/1000_mobile_header_bali.JPG");
     }
 
     .header-image.berlin {
-        background-image: url("../images/header/1500_mobile_header_berlin.JPG");
+        background-image: url("../images/header/1001_mobile_header_berlin.JPG");
     }
 
     .header-image.bretagne {
-        background-image: url("../images/header/1500_mobile_header_bretagne.jpg");
+        background-image: url("../images/header/1000_mobile_header_bretagne.jpg");
     }
 
     .header-image.portugal {
@@ -250,6 +250,7 @@
     border: none;
     background: none;
 }
+
 .fa-xmark,
 .fa-angle-left,
 .fa-angle-right  {

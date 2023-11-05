@@ -105,7 +105,7 @@ p {
     }
     /* Define different background images for screens with max-width 650px */
     .header-image-container {
-        background-image: url("../images/header/1500_mobile_header_1.jpg");
+        background-image: url("../images/header/1000_mobile_header_1.jpg");
     }
 }
 
