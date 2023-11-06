@@ -109,73 +109,6 @@ p {
     }
 }
 
-/*********** ABOUTME SECTION *************/
-.aboutme-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 124px 15% 90px 15%;
-}
-
-.aboutme-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 64px;
-    width: 100%;
-}
-
-.aboutme-content {
-    width: 60%;
-}
-
-.aboutme-image-container {
-    width: 40%;
-}
-
-.aboutme-content p {
-    padding-top: 32px;
-    text-align: justify;
-}
-
-.aboutme-image {
-    width: 100%;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    filter: grayscale(100%);
-}
-
-@media (min-width: 1500px) {
-    .aboutme-section {
-        margin: 124px auto 90px auto;
-        max-width: 1100px;
-    }
-}
-
-@media (max-width: 960px) {
-    .aboutme-section {
-        margin: 92px 15% 60px 15%;
-    }
-    .aboutme-container {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
-    }
-
-    .aboutme-content {
-        width: 100%;
-    }
-
-    .aboutme-image-container {
-        width: 80%;
-    }
-}
-
-@media (max-width: 650px) {
-    .aboutme-section {
-        margin: 70px 12px 32px 12px;
-    }
-}
-
 /*********** WORLDMAP SECTION *************/
 .worldmap-section {
     display: flex;
@@ -297,6 +230,82 @@ circle:hover {
         display: flex;
         flex-direction: column;
         gap: 12px;
+    }
+
+    .card-container img  {
+        transform: scale(1.04);
+    }
+
+    .card-container img:hover {
+    transform: scale(1.14);
+    }
+}
+
+/*********** ABOUTME SECTION *************/
+.aboutme-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 124px 15% 90px 15%;
+}
+
+.aboutme-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    width: 100%;
+}
+
+.aboutme-content {
+    width: 60%;
+}
+
+.aboutme-image-container {
+    width: 40%;
+}
+
+.aboutme-content p {
+    padding-top: 32px;
+    text-align: justify;
+}
+
+.aboutme-image {
+    width: 100%;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    filter: grayscale(100%);
+}
+
+@media (min-width: 1500px) {
+    .aboutme-section {
+        margin: 124px auto 90px auto;
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .aboutme-section {
+        margin: 92px 15% 60px 15%;
+    }
+
+    .aboutme-container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .aboutme-content {
+        width: 100%;
+    }
+
+    .aboutme-image-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 650px) {
+    .aboutme-section {
+        margin: 70px 12px 32px 12px;
     }
 }
 
