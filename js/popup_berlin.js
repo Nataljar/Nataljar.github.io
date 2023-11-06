@@ -1,6 +1,6 @@
 // Image popup + slider für Deutschland
 
-const images = [...document.querySelectorAll('.image')];      // es wird nach class="image" gesucht und in ein Array verpackt
+const images = [...document.querySelectorAll('.image')];  
 
 const imagePopup = document.querySelector('.image-popup');
 const closeBtn = document.querySelector('.close-btn');
@@ -9,35 +9,80 @@ const leftArrow = document.querySelector('.left-arrow');
 const rightArrow = document.querySelector('.right-arrow');
 const body = document.body;
 
-let index = 0; // will track our current image;
+let originalIndex = 0;  // original index when popup was opened
+let currentIndex = 0; // will track our current image;
+let hammertime;
 
-images.forEach((item, i) => {                           // Eine Schleife wird verwendet, um jedem Element der Variable images einen Klickereignislistener hinzuzufügen.
+function initializeSwipe(index) {
+  hammertime = new Hammer(largeImage);
+
+  hammertime.on('swipeleft', () => {
+    if (currentIndex < images.length - 1) {
+      currentIndex++;
+      updateImage(currentIndex);
+    }
+    // Update arrow visibility
+    leftArrow.style.display = 'block'; 
+    rightArrow.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
+  });
+
+  hammertime.on('swiperight', () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateImage(currentIndex);
+    }
+    // Update arrow visibility
+    rightArrow.style.display = 'block';
+    leftArrow.style.display = currentIndex === 0 ? 'none' : 'block'; 
+    
+  });
+
+  currentIndex = index; 
+}
+
+images.forEach((item, i) => {
   item.addEventListener('click', () => {
-    updateImage(i);                                     // Funktion wird beim klicken auf ein Bild aufgerufen und der Bildindex an die Funktion übergeben
-    imagePopup.classList.toggle('active');              // durch das Hinzufügen von active wird das popup Fenster sichtbar
-    body.classList.toggle("body-no-scroll"); /* this class is added so that the scrolling of the html page isn't working */
-})
+    originalIndex = i;
+    initializeSwipe(i);
+    updateImage(i);
+    imagePopup.classList.add('active');
+    body.classList.add('body-no-scroll');
+
+    // Update arrow visibility based on current index
+    leftArrow.style.display = i === 0 ? 'none' : 'block';
+    rightArrow.style.display = i === images.length - 1 ? 'none' : 'block';
+  });
 });
 
-const updateImage = (i) => {
-  let path = `images/galerie_popup_berlin/2200_berlin_${i + 1}.jpg`;                     // Der path wird mit dem entsprechenden Bildpfad generiert und dem largeImage-Element zugewiesen.
+function updateImage(i) {
+  let path = `images/galerie_popup_berlin/2200_berlin_${i + 1}.jpg`;
   largeImage.src = path;
-  index = i;                                            // Der index wird auf den übergebenen Index aktualisiert
-};
+}
 
-closeBtn.addEventListener('click', () => {              // Ein Klickereignislistener wird zum Schließen-Schaltflächen-Element hinzugefügt. Wenn darauf geklickt wird, wird das Bild-Popup durch das Hinzufügen oder Entfernen der CSS-Klasse 'active' ausgeblendet.
-  imagePopup.classList.toggle('active');
-  body.classList.toggle("body-no-scroll");
+closeBtn.addEventListener('click', () => {
+  imagePopup.classList.remove('active');
+  body.classList.remove('body-no-scroll');
+  if (hammertime) {
+    hammertime.destroy();
+  }
 });
 
-leftArrow.addEventListener('click', () => {             //Ein Klickereignislistener wird zum Linkspfeil-Element hinzugefügt. Wenn darauf geklickt wird und der aktuelle Index größer als 0 ist, wird das vorherige Bild durch Aufrufen der updateImage-Funktion mit dem vorherigen Index aktualisiert.
-  if (index > 0) {
-    updateImage(index - 1);
+leftArrow.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    updateImage(currentIndex);
   }
+  // Update arrow visibility
+  rightArrow.style.display = 'block'; 
+  leftArrow.style.display = currentIndex === 0 ? 'none' : 'block';
 });
 
 rightArrow.addEventListener('click', () => {
-  if (index < images.length - 1) {
-    updateImage(index + 1);
+  if (currentIndex < images.length - 1) {
+    currentIndex++;
+    updateImage(currentIndex);
   }
+  // Update arrow visibility
+  leftArrow.style.display = 'block'; 
+  rightArrow.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
 });

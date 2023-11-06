@@ -10,17 +10,15 @@ const body = document.body;
 
 let originalIndex = 0; // Original index when the popup is opened
 let currentIndex = 0; // Current index as you swipe
-let hammertime;
 
 function initializeSwipe(index) {
-  hammertime = new Hammer(largeImage);
+  let hammertime = new Hammer(largeImage);
   
   hammertime.on('swipeleft', () => {
     if (currentIndex < images.length - 1) {   // checking if current index is not the last iamge
       currentIndex++;
       updateImage(currentIndex);    // update the displayed image
     }
-
     // Update arrow visibility
     leftArrow.style.display = 'block'; // Always show left arrow when clicking the right arrow
     rightArrow.style.display = currentIndex === images.length - 1 ? 'none' : 'block';
@@ -39,7 +37,10 @@ function initializeSwipe(index) {
   currentIndex = index; // setting currentIndex to the provided index, which initializes it to the index of the initially opened image
 }
 
-images.forEach((item, i) => {
+/* item is the current element (in this case, an image element) being processed in the array during each iteration of the loop.
+
+i is the index of the current element in the array. It represents the position of the current element within the array. */
+images.forEach((item, i) => {   
   item.addEventListener('click', () => {
     originalIndex = i;    // setting originalIndex to the index of the clicked image to remember which image was initially opened.
     initializeSwipe(i);
